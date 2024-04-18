@@ -1,1 +1,1 @@
-# ecomerce-django
+# E-COMMERCE-DJANGO
