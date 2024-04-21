@@ -16,8 +16,8 @@
             <div class="col-lg-6 col-md-8 mx-auto">
                 
 
-                <h4> Styles Emporium... </h4>
-                <h4> Simplicidade no que há de melhor. </h4>
+                <h4> STYLES EMPORIUM... </h4>
+                <h4> SIMPLICIDADE NO QUE HÁ DE MELHOR. </h4>
 
 
                 <br>
@@ -25,7 +25,7 @@
 
                 <p class="lead text-muted">
 
-                Conheçam nossas coleções
+                CONHEÇAM NOSSAS COLEÇÕES
 
                 </p>
 
@@ -48,7 +48,7 @@
 
             <div class="container">
 
-              <div class="pb-3 h5"> Todos Produtos </div>
+              <div class="pb-3 h5"> TODOS NOSSOS PRODUTOS </div>
 
 
               <hr>
@@ -65,7 +65,7 @@
                        <img class="img-fluid" alt="Responsive image" src="{{product.image.url}}">
                        <div class="card-body">
                          <p class="card-text">
-                           <a class="text-info text-decoration-none" href=""> {{ product.title | capfirst }} </a>
+                           <a class="text-info text-decoration-none" href="{{product.get_absolute_url}}"> {{ product.title | capfirst }} </a>
                          </p>
                          <div class="d-flex justify-content-between align-items-center">
                            <h5> R$ {{ product.price }} </h5>

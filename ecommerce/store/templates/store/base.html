@@ -87,7 +87,7 @@
 
                         <li>
                             
-                            <a class="dropdown-item" href="{% url 'store' %}"> All </a>
+                            <a class="dropdown-item" href="{% url 'store' %}"> Todos </a>
                         
                         </li>
                     
@@ -95,7 +95,7 @@
 
                             <li>
 
-                                <a class="dropdown-item" href=""> {{ category.name | capfirst }} </a>
+                                <a class="dropdown-item" href="{{category.get_absolute_url}}"> {{ category.name | capfirst }} </a>
 
                             </li>
 
