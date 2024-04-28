@@ -65,7 +65,7 @@
 
                                 &nbsp;
 
-                                <select id="">
+                                <select id="select{{product.id}}">
 
                                     <option selected>
 
@@ -93,7 +93,7 @@
 
                                 &nbsp;
 
-                                <button type="button" id="delete-button"
+                                <button type="button" data-index="{{product.id}}"
                                         class="btn btn-danger btn-sm delete-button">
                                     Excluir
 
@@ -134,6 +134,61 @@
 
 
 </main>
+
+<script>
+
+    // Botão de Excluir
+
+    $(document).on('click', '.delete-button', function (e){
+
+        e.preventDefault();
+
+        $.ajax({
+
+            type: 'POST',
+            url: '{% url "cart-delete" %}',
+            data: {
+
+                product_id: $(this).data('index'),
+                csrfmiddlewaretoken: "{{csrf_token}}",
+                action: 'post'
+            },
+
+            success: function (json) {
+
+                //console.log(json)
+
+                location.reload();
+
+                document.getElementById("cart-qty").textContent = json.qtd
+
+                document.getElementById("total").textContent = json.total
+
+
+
+
+
+
+            },
+
+            error: function(xhrm, errmsg, err){
+
+
+            }
+
+
+
+
+
+        });
+    })
+
+
+
+
+
+
+</script>
 
 
 {% endblock %}
