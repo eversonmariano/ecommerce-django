@@ -45,6 +45,19 @@ class Cart():
 
             self.session.modified = True
 
+
+        def update(self, product, qtd):
+
+            product_id = str(product)
+
+            product_quantity = qtd
+
+            if product_id in self.cart:
+
+                self.cart[product_id]['qtd'] = product_quantity
+
+            self.session.modified = True
+
         def __len__(self):
 
             return sum(item['qtd'] for item in self.cart.values())
