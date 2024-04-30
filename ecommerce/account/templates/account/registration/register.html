@@ -1,0 +1,103 @@
+
+{% include "store/base.html" %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+    <style>
+
+
+        body{
+
+
+            background-color: gray;
+
+        }
+
+
+
+    </style>
+
+
+
+
+    <body>
+
+        <br>
+
+        <div class="container bg-white shadow-md p-5 form-layout">
+
+            <h3> CRIAR SUA CONTA </h3>
+
+            <h5> Compre Seu Item Favorito Agora Mesmo! </h5>
+
+            <hr>
+            <br>
+
+            <form method="POST" autocomplete="off">
+
+                {% csrf_token %}
+
+                {{form.username|as_crispy_field}}
+
+                <br> <br>
+
+
+                {{form.email|as_crispy_field}}
+
+                <br> <br>
+
+
+                {{form.password1|as_crispy_field}}
+
+                <br> <br>
+
+
+                {{form.password2|as_crispy_field}}
+
+
+                <br> <br>
+                
+                <button type="submit" class="btn btn-primary navbar-btn text-white w-100 p-2"> &nbsp; Criar Conta </button>
+
+                <br> <br>
+
+                <div class="text-center">
+
+
+
+                </div>
+
+
+            </form>
+
+
+
+
+
+        </div>
+
+
+
+    </body>
+
+    <br> <br>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
